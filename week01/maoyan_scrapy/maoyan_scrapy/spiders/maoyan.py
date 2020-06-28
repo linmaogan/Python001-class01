@@ -34,7 +34,7 @@ class MaoyanSpider(scrapy.Spider):
         title_list = soup.find_all('dl', attrs={'class': 'movie-list'})
         #for i in range(len(title_list)):
         # 在Python中应该这样写
-        for i in title_list:
+        for i in title_list[0:10]:
             # 在items.py定义
             item = MaoyanScrapyItem()
             title = i.find('a').get_text()
